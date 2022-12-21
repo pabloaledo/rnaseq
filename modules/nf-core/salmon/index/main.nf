@@ -2,7 +2,7 @@ process SALMON_INDEX {
     tag "$transcript_fasta"
     label "process_medium"
 
-    conda "bioconda::salmon=1.9.0"
+    conda "salmon=1.9.0"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/salmon:1.9.0--h7e5ed60_1' :
         'quay.io/biocontainers/salmon:1.9.0--h7e5ed60_1' }"

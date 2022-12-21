@@ -2,7 +2,7 @@ process SALMON_SUMMARIZEDEXPERIMENT {
     tag "$tx2gene"
     label "process_medium"
 
-    conda "bioconda::bioconductor-summarizedexperiment=1.24.0"
+    conda "bioconductor-summarizedexperiment=1.24.0"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/bioconductor-summarizedexperiment:1.24.0--r41hdfd78af_0' :
         'quay.io/biocontainers/bioconductor-summarizedexperiment:1.24.0--r41hdfd78af_0' }"
