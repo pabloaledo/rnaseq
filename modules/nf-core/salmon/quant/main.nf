@@ -2,7 +2,7 @@ process SALMON_QUANT {
     tag "$meta.id"
     label "process_medium"
 
-    conda "salmon=1.9.0"
+    conda "salmon=1.10.3"
 
     input:
     tuple val(meta), path(reads)
