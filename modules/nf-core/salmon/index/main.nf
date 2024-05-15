@@ -2,7 +2,7 @@ process SALMON_INDEX {
     tag "$transcript_fasta"
     label "process_medium"
 
-    conda "salmon=1.9.0"
+    conda "salmon=1.10.3"
 
     input:
     path genome_fasta
