@@ -3,9 +3,6 @@ process FQ_SUBSAMPLE {
     label 'process_single'
 
     conda "fq=0.9.1"
-    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/fq:0.9.1--h9ee0642_0':
-        'quay.io/biocontainers/fq:0.9.1--h9ee0642_0' }"
 
     input:
     tuple val(meta), path(fastq)

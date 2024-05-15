@@ -2,9 +2,6 @@ process SALMON_TXIMPORT {
     label "process_medium"
 
     conda "bioconductor-tximeta=1.12.0"
-    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/bioconductor-tximeta:1.12.0--r41hdfd78af_0' :
-        'quay.io/biocontainers/bioconductor-tximeta:1.12.0--r41hdfd78af_0' }"
 
     input:
     path ("salmon/*")

