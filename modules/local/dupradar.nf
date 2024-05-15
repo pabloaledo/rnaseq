@@ -2,7 +2,7 @@ process DUPRADAR {
     tag "$meta.id"
     label 'process_long'
 
-    conda "bioconductor-dupradar=1.28.0"
+    conda "bioconductor-dupradar=1.32.0"
 
     input:
     tuple val(meta), path(bam)
