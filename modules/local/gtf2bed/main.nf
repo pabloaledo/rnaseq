@@ -3,9 +3,6 @@ process GTF2BED {
     label 'process_low'
 
     conda "conda-forge::perl=5.26.2"
-    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/perl:5.26.2' :
-        'biocontainers/perl:5.26.2' }"
 
     input:
     path gtf

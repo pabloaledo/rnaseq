@@ -3,9 +3,6 @@ process CUSTOM_GETCHROMSIZES {
     label 'process_single'
 
     conda "${moduleDir}/environment.yml"
-    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/samtools:1.16.1--h6899075_1' :
-        'biocontainers/samtools:1.16.1--h6899075_1' }"
 
     input:
     tuple val(meta), path(fasta)
