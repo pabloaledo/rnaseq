@@ -6,5 +6,5 @@ channels:
 dependencies:
   - bioconda::samtools
   - bioconda::htslib
-  - bioconda::star
+  - bioconda::star=2.7.10a
   - conda-forge::gawk
