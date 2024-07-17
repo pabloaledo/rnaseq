@@ -6,4 +6,4 @@ channels:
   - defaults
 dependencies:
   - seqera::rsem
-  - seqera::star
+  - seqera::star=2.6.1d

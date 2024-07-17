@@ -2,7 +2,7 @@ process STAR_ALIGN_IGENOMES {
     tag "$meta.id"
     label 'process_high'
 
-    conda "bioconda::star bioconda::samtools conda-forge::gawk=5.1.0"
+    conda "seqera::star=2.6.1d bioconda::samtools conda-forge::gawk=5.1.0"
 
     input:
     tuple val(meta), path(reads, stageAs: "input*/*")
