@@ -2,7 +2,7 @@ process STAR_GENOMEGENERATE_IGENOMES {
     tag "$fasta"
     label 'process_high'
 
-    conda "bioconda::star=2.6.1d bioconda::samtools conda-forge::gawk=5.1.0"
+    conda "bioconda::star bioconda::samtools conda-forge::gawk=5.1.0"
 
     input:
     path fasta
