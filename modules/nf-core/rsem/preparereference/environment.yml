@@ -5,5 +5,5 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - bioconda::rsem
-  - bioconda::star=2.6.1d
+  - seqera::rsem
+  - seqera::star=2.6.1d
