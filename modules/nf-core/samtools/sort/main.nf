@@ -29,13 +29,11 @@ process SAMTOOLS_SORT {
 
     """
     samtools cat \\
-        --threads $task.cpus \\
         ${bam} \\
     | \\
     samtools sort \\
         $args \\
         -T ${prefix} \\
-        --threads $task.cpus \\
         ${reference} \\
         -o ${prefix}.${extension} \\
         -
