@@ -30,13 +30,13 @@ process SAMTOOLS_SORT {
     """
     samtools cat \\
         ${bam} \\
-    | \\
+    > intermediate
     samtools sort \\
         $args \\
         -T ${prefix} \\
         ${reference} \\
         -o ${prefix}.${extension} \\
-        -
+        intermediate
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
