@@ -28,17 +28,13 @@ process SAMTOOLS_SORT {
     if ("$bam" == "${prefix}.bam") error "Input and output names are the same, use \"task.ext.prefix\" to disambiguate!"
 
     """
-    samtools cat \\
-        --threads $task.cpus \\
-        ${bam} \\
-    > intermediate
     samtools sort \\
+        ${bam} \\
         $args \\
         -T ${prefix} \\
         --threads $task.cpus \\
         ${reference} \\
-        -o ${prefix}.${extension} \\
-        intermediate
+        -o ${prefix}.${extension}
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
