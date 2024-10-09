@@ -5,4 +5,4 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - seqera::bedtools
+  - bioconda::bedtools
